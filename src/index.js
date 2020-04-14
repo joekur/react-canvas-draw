@@ -413,7 +413,12 @@ export default class extends PureComponent {
     // Draw last line as a straight line while
     // we wait for the next point to be able to calculate
     // the bezier control point
-    this.ctx.temp.lineTo(p1.x, p1.y);
+
+    // Add 0.01 here so that we can draw a simple dot
+    // on click/touch. On mobile these positions can be
+    // integers and the canvas will not draw a dot if the
+    // starting coordinates equal the lineTo coordinates
+    this.ctx.temp.lineTo(p1.x + 0.01, p1.y + 0.01);
     this.ctx.temp.stroke();
   };
 
