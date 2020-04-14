@@ -1,6 +1,6 @@
 {
-  "name": "react-canvas-draw",
-  "version": "1.1.0",
+  "name": "react-canvas-draw-joekur",
+  "version": "1.1.1",
   "description": "A simple yet powerful canvas-drawing component for React.",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -34,6 +34,8 @@
   "devDependencies": {
     "all-contributors-cli": "^5.4.1",
     "babel-eslint": "^7.2.3",
+    "codecov": "3.5.x",
+    "coveralls": "3.0.x",
     "css-loader": "^0.28.9",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
@@ -47,19 +49,16 @@
     "nwb": "0.21.x",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "style-loader": "^0.19.1",
-    "codecov": "3.5.x",
-    "coveralls": "3.0.x"
+    "style-loader": "^0.19.1"
   },
   "author": {
     "name": "Martin Beierling",
     "email": "mbeierling@gmail.com"
   },
-  "homepage": "https://embiem.github.io/react-canvas-draw/",
   "license": "MIT",
-  "repository": "https://github.com/embiem/react-canvas-draw",
+  "repository": "https://github.com/joekur/react-canvas-draw",
   "bugs": {
-    "url": "https://github.com/embiem/react-canvas-draw/issues"
+    "url": "https://github.com/joekur/react-canvas-draw/issues"
   },
   "keywords": [
     "react-component",
