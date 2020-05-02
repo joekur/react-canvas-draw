@@ -182,6 +182,23 @@ class Demo extends Component {
           into the disabled canvas. It will load your previously saved
           masterpiece scaled to the current canvas dimensions.
         </p>
+        <p>The following shows how you can save an image, and tweak the background color</p>
+        <CanvasDraw
+          backgroundColor="blue"
+          ref={canvasDraw => (this.downloadableCanvas = canvasDraw)}
+        />
+        <button
+          onClick={() => {
+            var link = document.createElement('a');
+            link.download = 'canvas.png';
+            link.href = this.downloadableCanvas.canvasContainer.children[1].toDataURL();
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          }}
+        >
+          Download
+        </button>
         <p>
           That's it for now! Take a look at the{" "}
           <a href="https://github.com/mBeierl/react-canvas-draw/tree/master/demo/src">

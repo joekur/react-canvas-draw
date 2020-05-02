@@ -466,6 +466,15 @@ export default class extends PureComponent {
       this.canvas.temp.width,
       this.canvas.temp.height
     );
+
+    // draw background color
+    this.ctx.drawing.fillStyle = this.props.backgroundColor;
+    this.ctx.drawing.fillRect(
+      0,
+      0,
+      this.ctx.drawing.canvas.width,
+      this.ctx.drawing.canvas.height
+    );
   };
 
   loop = ({ once = false } = {}) => {
