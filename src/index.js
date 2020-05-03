@@ -43,6 +43,10 @@ const dimensionsPropTypes = PropTypes.oneOfType([
   PropTypes.string
 ]);
 
+const preventDefault = (e) => {
+  e.preventDefault();
+}
+
 export default class extends PureComponent {
   static propTypes = {
     onChange: PropTypes.func,
@@ -118,6 +122,9 @@ export default class extends PureComponent {
     this.drawImage();
     this.loop();
 
+    this.canvas.interface.addEventListener('touchstart', preventDefault, {passive: false});
+    this.canvas.interface.addEventListener('touchmove', preventDefault, {passive: false});
+
     window.setTimeout(() => {
       const initX = window.innerWidth / 2;
       const initY = window.innerHeight / 2;
@@ -159,6 +166,9 @@ export default class extends PureComponent {
 
   componentWillUnmount = () => {
     this.canvasObserver.unobserve(this.canvasContainer);
+
+    this.canvas.interface.removeEventListener('touchstart', preventDefault);
+    this.canvas.interface.removeEventListener('touchmove', preventDefault);
   };
 
   drawImage = () => {
